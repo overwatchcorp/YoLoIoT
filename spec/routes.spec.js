@@ -1,4 +1,5 @@
 const request = require('supertest')
+const pool = require('../bin/pool')
 
 // routes.js is an express app
 const app = require('../src/routes/routes.js')
@@ -24,6 +25,32 @@ const newClient = {
 
 describe('endpoints', () => {
   describe('/ingest', () => {
+    const testPayload = testData.testPayload
+
+    beforeEach((done) => {
+      pool.connect().then((db) => {
+        db.collection('clients').insertOne({
+          _id: testPayload.payload.clientID,
+          clientID: testPayload.payload.clientID,
+          pubKey: testData.pubKey,
+        })
+        .then((res, err) => {
+          if (err) return done.fail(err)
+          return done()
+        })
+      })
+    })
+    afterEach((done) => {
+      pool.connect().then((db) => {
+        db.collection('clients').deleteOne({
+          _id: testPayload.payload.clientID,
+        })
+        .then((res, err) => {
+          if (err) return done.fail(err)
+          return done()
+        })
+      })
+    })
     it('should return 200 OK', (done) => {
       request(app)
       .post('/ingest')
