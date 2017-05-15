@@ -7,5 +7,14 @@ module.exports = {
     	"semi": ["error", "never"],
     	"no-tabs": 0,
     	"indent": 0
+    },
+    "globals": {
+      "describe": true,
+      "it": true,
+      "expect": true,
+      "beforeAll": true,
+      "beforeEach": true,
+      "afterAll": true,
+      "afterEach": true,
     }
 };
