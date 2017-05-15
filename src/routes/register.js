@@ -11,10 +11,7 @@ function route(req, res) {
   .then((newClient) => {
     res.send(newClient)
   })
-  .catch(err => {
-    console.error(err)
-    res.send(err).status(500)
-  })
+  .catch(err => res.send(err).status(500))
 }
 
 module.exports = route
