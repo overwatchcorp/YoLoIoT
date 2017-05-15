@@ -43,7 +43,8 @@ describe('endpoints', () => {
       .expect(200)
       .end((err, res) => {
         if (err) done.fail(err)
-        expect(res.body).toEqual({ n: 1, ok: 1 })
+        expect(res.body.n).toEqual(1)
+        expect(res.body.ok).toEqual(1)
         done()
       })
     })
