@@ -7,4 +7,4 @@ else port = 8080
 
 const server = app.listen(port)
 
-server.on('listening', () => console.log('bound to port ' + port))
+server.on('listening', () => console.log(`listening on port ${port}`))
