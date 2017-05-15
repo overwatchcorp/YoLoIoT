@@ -12,7 +12,7 @@
     "express": "^4.15.2",
     "mongodb": "^2.2.26",
     "mongodb-fixture": "^1.0.0",
-    "randomstring": "1.1.5",
+    "randomstring": "^1.1.5",
     "tweetnacl": "^1.0.0-rc.1",
     "tweetnacl-util": "^0.15.0"
   },
