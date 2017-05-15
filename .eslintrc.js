@@ -11,6 +11,7 @@ module.exports = {
     "globals": {
       "describe": true,
       "it": true,
+      "jasmine": true,
       "expect": true,
       "beforeAll": true,
       "beforeEach": true,
