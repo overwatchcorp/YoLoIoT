@@ -14,7 +14,10 @@ function route(req, res) {
   // logs data to collection 'data'
   return saveData.save(body.payload)
   .then(dbRes => res.send(dbRes))
-  .catch(err => res.send(err).status(500))
+  .catch(err => {
+    console.error(err)
+    res.send(err).status(500)
+  })
 }
 
 module.exports = route

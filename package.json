@@ -25,6 +25,8 @@
     "supertest": "^3.0.0"
   },
   "scripts": {
+    "start": "node src/launch.js",
+    "devstart": "nf start",
     "lint": "eslint ./**/* -c .eslintrc.js",
     "test": "nf run jasmine",
     "dev": "nodemon --exec 'yarn test && yarn lint'",
