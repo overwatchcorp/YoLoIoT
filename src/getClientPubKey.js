@@ -3,7 +3,7 @@ const pool = require('../bin/pool')
 function getKey(clientID) {
   return new Promise((resolve, reject) => {
     const query = {
-      id: { $eq: clientID },
+      clientID: { $eq: clientID },
     }
     pool.connect().then((db) => {
       db.collection('clients')
